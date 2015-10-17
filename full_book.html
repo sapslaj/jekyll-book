@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div class="pager">
+  <a class="pagebar" href="#top">top</a>
+</div>
+
+<div class="index container">
+  {% include header.html %}
+
+  {% include toc.html %}
+
+  <p>
+    <a href="/">...or you can read the book in separate chapters here</a>
+  </p>
+</div>
+
+{% for post in site.posts reversed %}
+<div class="container">
+  <a name="{{ post.permalink }}"></a>
+  <h2>{{ post.title }}</h2>
+
+  {{ post.content }}
+</div>
+{% endfor %}
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/qwery/4.0.0/qwery.min.js" charset="utf-8"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bean/1.0.15/bean.min.js" charset="utf-8"></script>
+<script>
+qwery(".toc > ol > li > a").forEach(function (el) {
+  bean.on(el, 'click', function (e) {
+    e.preventDefault();
+    location.href = '#' + el.href.match(/chapter.*.html/)[0];
+  })
+});
+</script>

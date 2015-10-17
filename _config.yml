@@ -1,0 +1,10 @@
+# Book settings
+baseurl: "/" # the subpath of your book, e.g. /book/
+
+title: My Awesome Book
+meta:
+  author: sapslaj
+  editor: xNightMare
+
+# Build settings
+markdown: kramdown

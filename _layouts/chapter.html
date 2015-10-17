@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="pager">
+  <a class="pagebar" id="previous" href="{% if page.previous %}{{ page.previous.url }}{% else %}../{% endif %}">&laquo; previous</a> |
+  <a class="pagebar" id="toc" href="{% if site.baseurl %}{{ site.baseurl }}{% else %}/{% endif %}">TOC</a> |
+  <a class="pagebar" id="next" href="{% if page.next %}{{ page.next.url }}{% else %}/{% endif %}">next &raquo;</a>
+</div>
+
+<div class="container">
+  <h1>{{ site.title }}</h1>
+  <h2>{{ page.title }}</h2>
+
+  {{ content }}
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.4/hammer.min.js" charset="utf-8"></script>
+<script>
+var hammertime = new Hammer(document.getElementsByTagName('body')[0]);
+hammertime.on('swipeleft swiperight', function(ev) {
+  if(ev.type == 'swipeleft') {
+    document.getElementById('next').click();
+  } else if (ev.type == 'swiperight') {
+    document.getElementById('previous').click();
+  }
+});
+</script>

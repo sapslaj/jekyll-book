@@ -1,0 +1,10 @@
+<div class="toc">
+  <h5>Table of Contents</h5>
+  <ol>
+    {% for post in site.posts reversed %}
+    <li>
+      <a href="{{ post.permalink }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ol>
+</div>

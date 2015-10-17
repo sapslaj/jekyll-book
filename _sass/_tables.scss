@@ -1,0 +1,55 @@
+// Stolen from Pure with a few modifications (http://purecss.io/) ❤
+
+table {
+  /* Remove spacing between table cells (from Normalize.css) */
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  border: 1px solid #cbcbcb;
+  width: 100%;
+  margin-bottom: 2rem;
+
+  caption {
+    color: $typl8-heading-color;
+    font: italic 85%/1 arial, sans-serif;
+    padding: 1em 0;
+    text-align: center;
+  }
+
+  thead {
+    background-color: #e0e0e0;
+    color: $typl8-heading-color;
+    text-align: left;
+    vertical-align: bottom;
+  }
+
+  tbody {
+    & > tr:last-child > td {
+      border-bottom-width: 0;
+    }
+  }
+
+  /*
+  striping:
+     even - #fff (white)
+     odd  - #f2f2f2 (light gray)
+  */
+  tr {
+    &:nth-child(2n-1) td {
+      background-color: #f2f2f2;
+    }
+  }
+
+  td {
+    border-bottom: 1px solid #cbcbcb;
+  }
+
+  td, th {
+    border-left: 1px solid #cbcbcb;/*  inner column border */
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible; /*to make ths where the title is really long work*/
+    padding: 0.5em 1em; /* cell padding */
+  }
+}
