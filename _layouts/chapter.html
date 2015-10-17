@@ -3,9 +3,9 @@ layout: default
 ---
 
 <div class="pager">
-  <a class="pagebar" id="previous" href="{% if page.previous %}{{ page.previous.url }}{% else %}../{% endif %}">&laquo; previous</a> |
+  <a class="pagebar" id="previous" href="{% if site.baseurl %}{{ site.baseurl }}{% else %}/{% endif %}{% if page.previous %}{{ page.previous.url }}{% endif %}">&laquo; previous</a> |
   <a class="pagebar" id="toc" href="{% if site.baseurl %}{{ site.baseurl }}{% else %}/{% endif %}">TOC</a> |
-  <a class="pagebar" id="next" href="{% if page.next %}{{ page.next.url }}{% else %}/{% endif %}">next &raquo;</a>
+  <a class="pagebar" id="next" href="{% if site.baseurl %}{{ site.baseurl }}{% else %}/{% endif %}{% if page.next %}{{ page.next.url }}{% endif %}">next &raquo;</a>
 </div>
 
 <div class="container">
