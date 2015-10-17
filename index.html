@@ -8,6 +8,6 @@ layout: default
   {% include toc.html %}
 
   <p>
-    <a href="/full_book.html">...or you can read the full book here</a>
+    <a href="{% if site.baseurl %}{{ site.baseurl }}{% else %}/{% endif %}full_book.html">...or you can read the full book here</a>
   </p>
 </div>
