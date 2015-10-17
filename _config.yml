@@ -1,5 +1,5 @@
 # Book settings
-baseurl: "/" # the subpath of your book, e.g. /book/
+baseurl: "/jekyll-book/" # the subpath of your book, e.g. /book/
 
 title: My Awesome Book
 meta:
